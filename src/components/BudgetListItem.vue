@@ -80,6 +80,11 @@ export default {
     align-items: center;
     padding: 10px 15px;
 }
+.budget-comment {
+    overflow-wrap: anywhere;
+    padding-right: 10px;
+    text-align: start;
+}
 .budget-value {
     font-weight: bold;
     margin-left: auto;

@@ -14,6 +14,18 @@ const usersList = {
         comment: "Some outcome comment",
         id: 2,
       },
+      3: {
+        type: "OUTCOME",
+        value: 100,
+        comment: "Some outcome comment",
+        id: 2,
+      },
+      4: {
+        type: "OUTCOME",
+        value: -50,
+        comment: "Some outcome comment",
+        id: 2,
+      },
     },
   },
   getters: {

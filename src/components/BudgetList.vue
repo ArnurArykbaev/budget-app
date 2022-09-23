@@ -1,6 +1,6 @@
 <template>
   <div class="budget-list-wrap">
-    <ElCard :header="header">
+    <ElCard class="card" :header="header">
       <ElRow class="filter-row" type="flex" justify="space-around" >
             <ElButton type="primary" size="small" @click="selectedType = 'All'">All</ElButton>
             <ElButton type="success" size="small" @click="selectedType = 'INCOME'">Income</ElButton>
@@ -56,5 +56,8 @@ export default {
 }
 .filter-row {
   margin-bottom: 20px;
+}
+.card {
+  background-color: #F8F9F4;
 }
 </style>

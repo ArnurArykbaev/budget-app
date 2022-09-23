@@ -1,18 +1,18 @@
 <template>
   <ElCard class="form-card">
-    <ElForm :model="formData" ref="addItemForm" :rules="rules" lable-position="top">
+    <ElForm  :model="formData" ref="addItemForm" :rules="rules" lable-position="top" class="form">
       <ElFormItem label="Type" prop="type">
         <ElSelect
           class="type-select"
           v-model="formData.type"
           placeholder="Choose type..."
         >
-          <ElOption label="Income" value="INCOME" />
-          <ElOption label="Outcome" value="OUTCOME" />
+          <ElOption style="background-color: gold;" label="Income" value="INCOME" />
+          <ElOption style="background-color: gold;" label="Outcome" value="OUTCOME" />
         </ElSelect>
       </ElFormItem>
       <ElFormItem label="Comments" prop="comment">
-        <ElInput v-model="formData.comment" />
+        <ElInput style="--el-input-bg-color: gold" v-model="formData.comment" />
       </ElFormItem>
       <ElFormItem label="Value" prop="value">
         <ElInput v-model.number="formData.value" />
@@ -66,8 +66,15 @@ export default {
 .form-card {
   max-width: 500px;
   margin: auto;
+  background-color: #F8F9F4;
 }
 .type-select {
   width: 100%;
+}
+.el-input {
+  --el-input-bg-color: gold !important;
+}
+.el-input--suffix .el-input {
+  --el-input-bg-color: #a55a5a !important;
 }
 </style>
