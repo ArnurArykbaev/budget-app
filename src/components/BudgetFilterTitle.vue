@@ -26,10 +26,6 @@ export default {
             type: Number,
             default: 0,
         },
-        income: {
-            type: Number,
-            default: 0,
-        },
     },
 }
 </script>
@@ -42,12 +38,12 @@ export default {
   padding: 0;
 }
 .card-block {
-  padding: 10px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
   text-align: start;
-  background-color: #33b12f;
+  background-color: #e9a424;
 }
 .card-block-img {
   max-width: 100px;

@@ -15,22 +15,24 @@ const usersList = {
         id: 2,
       },
       3: {
-        type: "OUTCOME",
+        type: "INCOME",
         value: 100,
-        comment: "Some outcome comment",
+        comment: "Income comment",
         id: 2,
       },
       4: {
         type: "OUTCOME",
         value: -50,
-        comment: "Some outcome comment",
+        comment: "Outcome comment",
         id: 2,
       },
     },
+    filter: "ALL"
   },
   getters: {
     // { list } = state.list
     userBudget: ({ list }) => Object.values(list),
+    currentType: ({ filter }) => filter,
   },
   mutations: {
     DELETE_USER(state, id) {
@@ -38,6 +40,9 @@ const usersList = {
     },
     ADD_USER(state, user) {
       state.list[user.id] = user;
+    },
+    SELECT_TYPE(state, type) {
+      state.filter = type;
     },
   },
   actions: {
@@ -48,7 +53,10 @@ const usersList = {
       const newUser = { ...user, id: String(Math.random()) };
       commit("ADD_USER", newUser);
     },
+    selectFilter({ commit }, type) {
+      commit("SELECT_TYPE", type);
+    },
   },
-  };
+};
 
   export default usersList;

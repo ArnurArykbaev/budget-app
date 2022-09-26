@@ -1,11 +1,6 @@
 <template>
   <div class="budget-list-wrap">
     <ElCard class="card" :header="header">
-      <ElRow class="filter-row" type="flex" justify="space-around" >
-            <ElButton type="primary" size="small" @click="selectedType = 'All'">All</ElButton>
-            <ElButton type="success" size="small" @click="selectedType = 'INCOME'">Income</ElButton>
-            <ElButton type="danger" size="small" @click="selectedType = 'OUTCOME'">Outcome</ElButton>
-      </ElRow>
       <template v-if="!isEmpty">
         <BudgetListItem
           v-for="(item, list) in userBudget"
@@ -53,11 +48,9 @@ export default {
 .budget-list-wrap {
   max-width: 500px;
   margin: auto;
+  margin-bottom: 12px;
 }
 .filter-row {
   margin-bottom: 20px;
-}
-.card {
-  background-color: #F8F9F4;
 }
 </style>

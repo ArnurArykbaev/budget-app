@@ -7,17 +7,17 @@
           v-model="formData.type"
           placeholder="Choose type..."
         >
-          <ElOption style="background-color: gold;" label="Income" value="INCOME" />
-          <ElOption style="background-color: gold;" label="Outcome" value="OUTCOME" />
+          <ElOption label="Income" value="INCOME" />
+          <ElOption label="Outcome" value="OUTCOME" />
         </ElSelect>
       </ElFormItem>
       <ElFormItem label="Comments" prop="comment">
-        <ElInput style="--el-input-bg-color: gold" v-model="formData.comment" />
+        <ElInput v-model="formData.comment" />
       </ElFormItem>
       <ElFormItem label="Value" prop="value">
         <ElInput v-model.number="formData.value" />
       </ElFormItem>
-      <ElButton @click="onSubmit" type="primary">Submit</ElButton>
+      <ElButton @click="onSubmit" :style="{ backgroundColor: '#04A777', color: '#ffff' }" type="">Submit</ElButton>
     </ElForm>
   </ElCard>
 </template>
@@ -66,15 +66,9 @@ export default {
 .form-card {
   max-width: 500px;
   margin: auto;
-  background-color: #F8F9F4;
+  margin-bottom: 20px;
 }
 .type-select {
   width: 100%;
-}
-.el-input {
-  --el-input-bg-color: gold !important;
-}
-.el-input--suffix .el-input {
-  --el-input-bg-color: #a55a5a !important;
 }
 </style>

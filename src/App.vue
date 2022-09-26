@@ -2,7 +2,6 @@
   <div id="App">
     <BudgetFilter :total="totalBalance" :income="incomeBalance" :outcome="outcomeBalance"/>
     <FormBalance @submitForm="onFormSubmit"/>
-    <TotalBalance :total="totalBalance" />
     <BudgetList />
   </div>
 </template>
@@ -10,7 +9,6 @@
 <script>
 import BudgetFilter from "@/components/BudgetFilter.vue"
 import BudgetList from "@/components/BudgetList.vue";
-import TotalBalance from "@/components/TotalBalance.vue";
 import FormBalance from "@/components/FormBalance.vue";
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
@@ -20,7 +18,6 @@ export default {
   components: {
     BudgetFilter,
     BudgetList,
-    TotalBalance,
     FormBalance,
   },
   computed: {
@@ -58,7 +55,7 @@ export default {
 
 <style>
 html {
-  background-color: #F8F9F4;
+  background-color: #f7f7f7;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -67,5 +64,9 @@ html {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+:root {
+  --el-fill-color-blank: #f7f7f7 !important;
+  --el-bg-color-overlay: #f7f7f7 !important;
 }
 </style>

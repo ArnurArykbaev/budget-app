@@ -4,18 +4,14 @@
 
     <ElRow>
       <ElCol :span="24">
-        <BudgetFilterTitle :total="total"/>
+        <BudgetFilterTitle :total="total" @click="selectedType('ALL')"/>
       </ElCol>
     </ElRow>
 
     <ElRow :gutter="24" justify="space-between">
       <ElCol :span="12" :style="{ padding: '0px' }" >
-        <BudgetFilterTitle :total="income" class="sa"/>
+        <BudgetFilterBalance :income="income" :outcome="outcome"/>
       </ElCol>
-      <ElCol :span="12" :style="{ padding: '0px' }" >
-        <BudgetFilterTitle :total="outcome"/>
-      </ElCol>
-
     </ElRow>
   </div>
 </template>
@@ -23,6 +19,8 @@
 <script>
 import { ref } from 'vue';
 import BudgetFilterTitle from '@/components/BudgetFilterTitle.vue';
+import BudgetFilterBalance from '@/components/BudgetFilterBalance.vue'
+import { mapActions } from 'vuex';
 
 export default {
   name: "BudgetFilter",
@@ -44,8 +42,15 @@ export default {
       },
   },
   components: {
-    BudgetFilterTitle
+    BudgetFilterTitle,
+    BudgetFilterBalance
   },
+  methods: {
+    ...mapActions("budgetList", ["selectFilter"]),
+    selectedType(data) {
+      this.selectFilter(data);
+    }
+  }
 }
 </script>
 
@@ -54,8 +59,9 @@ export default {
   max-width: 500px;
   margin: auto;
   padding: 0;
+  margin-bottom: 20px;
 }
 .el-row {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 </style>

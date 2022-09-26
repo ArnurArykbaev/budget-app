@@ -1,5 +1,5 @@
 <template>
-    <div class="list-item" v-show="selectedComp(selectedType, item.type)">
+    <div class="list-item" v-show="selectedComp(currentType, item.type)">
         <ElIcon v-show="item.type === 'INCOME'" class="icon icon-style" color="#67C23A">
             <ArrowUpBold />
         </ElIcon>
@@ -38,10 +38,6 @@ export default {
         Delete,
     },
     props: {
-        selectedType: {
-            type: String,
-            default: "All"
-        },
         item: {
             default: () => ({}),
         }
@@ -50,7 +46,7 @@ export default {
         confirmDialog: false
     }),
     computed: {
-        ...mapGetters("budgetList", ["userBudget"]),
+        ...mapGetters("budgetList", ["userBudget", "currentType"]),
     },
     emits: ["selectFilter"],
     methods: {
@@ -58,7 +54,7 @@ export default {
         selectedComp(selectedType, type) {
             if(selectedType === type) {
                 return true
-            } else if(selectedType === 'All') {
+            } else if(selectedType === 'ALL') {
                 return true
             }
         },
