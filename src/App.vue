@@ -1,7 +1,7 @@
 <template>
   <div id="App">
     <BudgetFilter :total="totalBalance" :income="incomeBalance" :outcome="outcomeBalance"/>
-    <FormBalance @submitForm="onFormSubmit"/>
+    <FormBalance/>
     <BudgetList />
   </div>
 </template>
@@ -11,7 +11,6 @@ import BudgetFilter from "@/components/BudgetFilter.vue"
 import BudgetList from "@/components/BudgetList.vue";
 import FormBalance from "@/components/FormBalance.vue";
 import { mapGetters } from "vuex";
-import { mapActions } from "vuex";
 
 export default {
   name: "App",
@@ -23,7 +22,6 @@ export default {
   computed: {
     ...mapGetters("budgetList", ["userBudget"]),
     totalBalance() {
-      console.log(this.userBudget)
       return Object.values(this.userBudget).reduce(
         (acc, item) => acc + item.value,
         0
@@ -45,10 +43,6 @@ export default {
     },
   },
   methods: {
-    ...mapActions("budgetList", ["addNewUser"]),
-    onFormSubmit(data) {
-      this.addNewUser(data);
-    }
   }
 };
 </script>

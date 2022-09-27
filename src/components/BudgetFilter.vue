@@ -59,7 +59,7 @@ export default {
   max-width: 500px;
   margin: auto;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 .el-row {
   margin-bottom: 6px;

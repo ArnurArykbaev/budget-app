@@ -6,7 +6,6 @@
           v-for="(item, list) in userBudget"
           :key="list"
           :item="item"
-          :selectedType="selectedType"
         />
       </template>
       <ElAlert
@@ -29,7 +28,6 @@ export default {
     BudgetListItem,
   },
   data: () => ({
-    selectedType: "All",
     header: "Budget List",
     emptyTitle: "Empty List",
   }),

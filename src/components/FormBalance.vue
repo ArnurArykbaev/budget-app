@@ -1,62 +1,45 @@
 <template>
-  <ElCard class="form-card">
-    <ElForm  :model="formData" ref="addItemForm" :rules="rules" lable-position="top" class="form">
-      <ElFormItem label="Type" prop="type">
-        <ElSelect
-          class="type-select"
-          v-model="formData.type"
-          placeholder="Choose type..."
-        >
-          <ElOption label="Income" value="INCOME" />
-          <ElOption label="Outcome" value="OUTCOME" />
-        </ElSelect>
-      </ElFormItem>
-      <ElFormItem label="Comments" prop="comment">
-        <ElInput v-model="formData.comment" />
-      </ElFormItem>
-      <ElFormItem label="Value" prop="value">
-        <ElInput v-model.number="formData.value" />
-      </ElFormItem>
-      <ElButton @click="onSubmit" :style="{ backgroundColor: '#04A777', color: '#ffff' }" type="">Submit</ElButton>
-    </ElForm>
-  </ElCard>
+  <div class="form-card">
+    <ElCollapse accordion>
+      <ElCollapseItem>
+        <template #title>
+          <ElCol>
+            <ElCard 
+              :style="{boxShadow: '--el-box-shadow-dark', border: 0}"
+              shadow="hover" 
+              :body-style="{ padding: '0px' }" 
+              >
+              <div class="card-block balance-card" shadow="hover" >
+                  <div class="card-block-info">
+                      <h2>Add new item</h2>
+                  </div>
+                  <img class="card-block-img" src="../assets/plus.png" alt="">
+              </div>
+            </ElCard>
+          </ElCol>
+        </template>
+        <FormSpoiler @submitForm="onFormSubmit"/>
+      </ElCollapseItem>
+    </ElCollapse>
+
+  </div>
 </template>
 
 <script>
+import FormSpoiler from "@/components/FormSpoiler.vue";
+import { mapActions } from "vuex";
+
 export default {
   name: "FormBalance",
+  components: {
+    FormSpoiler
+  },
   data: () => ({
-    formData: {
-      type: "INCOME",
-      comment: "",
-      value: 0,
-    },
-    rules: {
-      type: [
-        { required: true, message: "Please select type", trigger: "blur" }
-      ],
-      comment: [
-        { required: true, message: "Please input comment", trigger: "change" }
-      ],
-      value: [
-        { required: true, message: "Please input value", trigger: "change" },
-        { type: "number", message: "Value must be a number", trigger: "change" }
-      ]
-    }
   }),
   methods: {
-    onSubmit() {
-      this.$refs.addItemForm.validate(valid => {
-        if (valid) {
-          if(this.formData.type === "OUTCOME" && this.formData.value > 0) {
-            this.formData.value = -this.formData.value;
-          } else if(this.formData.type === "INCOME" && this.formData.value < 0) {
-            this.formData.value = -this.formData.value;
-          }
-          this.$emit("submitForm", { ...this.formData });
-          this.$refs.addItemForm.resetFields();
-        }
-      });
+    ...mapActions("budgetList", ["addNewUser"]),
+    onFormSubmit(data) {
+      this.addNewUser(data);
     }
   }
 };
@@ -64,11 +47,43 @@ export default {
 
 <style scoped>
 .form-card {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   margin: auto;
   margin-bottom: 20px;
 }
-.type-select {
+.card {
+  display: flex;
+  padding: 0;
+}
+.el-col:active {
+  border: 1px solid transparent;
+  color: transparent;
+}
+.el-card:hover {
+  cursor: pointer;
+}
+.card-block {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  text-align: start;
+  background-color: #04A777;
+}
+.card-block-img {
+  max-width: 50px;
   width: 100%;
+  height: 100%;
+  margin: auto 0;
+}
+.card-block-info {    
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #ffff;
 }
 </style>

@@ -51,10 +51,10 @@ export default {
     emits: ["selectFilter"],
     methods: {
         ...mapActions("budgetList", ["deleteSomeUser"]),
-        selectedComp(selectedType, type) {
-            if(selectedType === type) {
+        selectedComp(currentType, type) {
+            if(currentType === type) {
                 return true
-            } else if(selectedType === 'ALL') {
+            } else if(currentType === 'ALL') {
                 return true
             }
         },

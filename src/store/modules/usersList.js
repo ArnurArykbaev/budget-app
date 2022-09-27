@@ -18,13 +18,13 @@ const usersList = {
         type: "INCOME",
         value: 100,
         comment: "Income comment",
-        id: 2,
+        id: 3,
       },
       4: {
         type: "OUTCOME",
         value: -50,
         comment: "Outcome comment",
-        id: 2,
+        id: 4,
       },
     },
     filter: "ALL"
@@ -50,6 +50,7 @@ const usersList = {
       commit("DELETE_USER", userId);
     },
     addNewUser({ commit }, user) {
+      console.log(user)
       const newUser = { ...user, id: String(Math.random()) };
       commit("ADD_USER", newUser);
     },

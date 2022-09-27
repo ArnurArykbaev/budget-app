@@ -37,6 +37,13 @@ export default {
   display: flex;
   padding: 0;
 }
+.el-col:active {
+  border: 1px solid transparent;
+  color: transparent;
+}
+.el-card:hover {
+  cursor: pointer;
+}
 .card-block {
   padding: 10px 15px;
   display: flex;
