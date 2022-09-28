@@ -1,36 +1,36 @@
 <template>
     <div class="card">
-      <ElCol>
-        <ElCard 
-          :style="{boxShadow: '--el-box-shadow-dark', border: 0, backgroundColor: incomeBalance.bg }"
-          shadow="hover" 
-          :body-style="{ padding: '0px' }" 
-          @click="selectedType(incomeBalance.type)"
-          >
-          <div class="card-block balance-card" shadow="hover" >
-            <div class="card-block-info">
-                <span>{{ incomeBalance.title }}</span>
-                <h4>$ {{ income }}</h4>
+      <ElCol >
+        <div class="card-filters">
+          <ElCard 
+            :style="{boxShadow: '--el-box-shadow-dark', border: 0, backgroundColor: incomeBalance.bg }"
+            shadow="hover" 
+            :body-style="{ padding: '0px' }" 
+            @click="selectedType(incomeBalance.type)"
+            >
+            <div class="card-block balance-card" shadow="hover" >
+              <div class="card-block-info">
+                  <span>{{ incomeBalance.title }}</span>
+                  <h4>$ {{ income }}</h4>
+              </div>
+              <img class="card-block-img" :src="require(`../assets/${incomeBalance.img}`)" alt="">
             </div>
-            <img class="card-block-img" :src="require(`../assets/${incomeBalance.img}`)" alt="">
-          </div>
-        </ElCard>
-      </ElCol>
-      <ElCol>
-        <ElCard 
-          :style="{boxShadow: '--el-box-shadow-dark', border: 0, backgroundColor: outcomeBalance.bg }"
-          shadow="hover" 
-          :body-style="{ padding: '0px' }" 
-          @click="selectedType(outcomeBalance.type)"
-          >
-          <div class="card-block balance-card" shadow="hover" >
-            <div class="card-block-info">
-                <span>{{ outcomeBalance.title }}</span>
-                <h4>$ {{ outcome }}</h4>
+          </ElCard>
+          <ElCard 
+            :style="{boxShadow: '--el-box-shadow-dark', border: 0, backgroundColor: outcomeBalance.bg }"
+            shadow="hover" 
+            :body-style="{ padding: '0px' }" 
+            @click="selectedType(outcomeBalance.type)"
+            >
+            <div class="card-block balance-card" shadow="hover" >
+              <div class="card-block-info">
+                  <span>{{ outcomeBalance.title }}</span>
+                  <h4>$ {{ outcome }}</h4>
+              </div>
+              <img class="card-block-img" :src="require(`../assets/${outcomeBalance.img}`)" alt="">
             </div>
-            <img class="card-block-img" :src="require(`../assets/${outcomeBalance.img}`)" alt="">
-          </div>
-        </ElCard>
+          </ElCard>
+        </div>
       </ElCol>
     </div>
 </template>
@@ -80,6 +80,14 @@ export default {
   display: flex;
   padding: 0;
 }
+.card-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.el-card {
+  width: 49%;
+}
 .el-col:active {
   border: 1px solid transparent;
   color: red;
@@ -114,5 +122,16 @@ h4 {
 span {
   padding: 5px 0;
   font-size: 14px;
+}
+
+@media (max-width: 370px) {
+  .card-filters {
+    display: flex;
+    flex-direction: column;
+  }
+  .el-card {
+    width: 100%;
+    margin-top: 5px;
+  }
 }
 </style>

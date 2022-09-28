@@ -1,7 +1,5 @@
 <template>
-  <time class="time">{{ currentDate }}</time>
   <div class="budget-filter-wrap"> 
-
     <ElRow>
       <ElCol :span="24">
         <BudgetFilterTitle :total="total" @click="selectedType('ALL')"/>
@@ -9,7 +7,7 @@
     </ElRow>
 
     <ElRow :gutter="24" justify="space-between">
-      <ElCol :span="12" :style="{ padding: '0px' }" >
+      <ElCol :style="{ padding: '0px' }" >
         <BudgetFilterBalance :income="income" :outcome="outcome"/>
       </ElCol>
     </ElRow>
@@ -17,7 +15,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
 import BudgetFilterTitle from '@/components/BudgetFilterTitle.vue';
 import BudgetFilterBalance from '@/components/BudgetFilterBalance.vue'
 import { mapActions } from 'vuex';
@@ -25,7 +22,6 @@ import { mapActions } from 'vuex';
 export default {
   name: "BudgetFilter",
   data: () => ({
-    currentDate: ref(new Date())
   }),
   props: {
       total: {
