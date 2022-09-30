@@ -73,11 +73,12 @@ export default {
 <style scoped>
 .list-item {
     display: flex;
+    font-family: "Quicksand-Regular", Arial, sans-serif;
     align-items: center;
     padding: 10px 15px;
 }
 .budget-comment {
-    overflow-wrap: anywhere;
+    word-break: break-word;
     padding-right: 10px;
     text-align: start;
 }

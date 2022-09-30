@@ -54,8 +54,8 @@ export default {
 @font-face {
     font-family: 'RubikDirt-Regular';
     src: local('RubikDirt-Regular'),
-         url('~@/assets/fonts/RubikDirt-Regular.woff') format('woff'),
          url('~@/assets/fonts/RubikDirt-Regular.woff2') format('woff2'),
+         url('~@/assets/fonts/RubikDirt-Regular.woff') format('woff'),
          url('~@/assets/fonts/RubikDirt-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -63,8 +63,8 @@ export default {
 @font-face {
     font-family: 'Quicksand-Regular';
     src: local('Quicksand-Regular'),
-         url('~@/assets/fonts/Quicksand-Regular.woff') format('woff'),
          url('~@/assets/fonts/Quicksand-Regular.woff2') format('woff2'),
+         url('~@/assets/fonts/Quicksand-Regular.woff') format('woff'),
          url('~@/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -79,10 +79,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 :root {
   --el-fill-color-blank: #f7f7f7 !important;
   --el-bg-color-overlay: #f7f7f7 !important;
 }
+
 </style>

@@ -73,7 +73,7 @@ export default{
         return this.toStringDate(month);
     },
     currentDay() {
-        return this.currentDate.getDay();
+        return this.currentDate.getDate();
     }
   }
 }
@@ -83,6 +83,7 @@ export default{
     .header-wrap {
         display: flex;
         max-width: 500px;
+        margin-top: 10px;
         margin: auto;
     }
     .el-menu {
@@ -101,4 +102,5 @@ export default{
         font-weight: normal;
         color: #409EFF;
     }
+
 </style>

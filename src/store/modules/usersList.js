@@ -50,7 +50,6 @@ const usersList = {
       commit("DELETE_USER", userId);
     },
     addNewUser({ commit }, user) {
-      console.log(user)
       const newUser = { ...user, id: String(Math.random()) };
       commit("ADD_USER", newUser);
     },
