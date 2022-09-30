@@ -1,5 +1,6 @@
 <template>
   <div id="App">
+    <HeaderDate />
     <BudgetFilter :total="totalBalance" :income="incomeBalance" :outcome="outcomeBalance"/>
     <FormBalance/>
     <BudgetList />
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+import HeaderDate from "@/components/HeaderDate.vue"
 import BudgetFilter from "@/components/BudgetFilter.vue"
 import BudgetList from "@/components/BudgetList.vue";
 import FormBalance from "@/components/FormBalance.vue";
@@ -15,6 +17,7 @@ import { mapGetters } from "vuex";
 export default {
   name: "App",
   components: {
+    HeaderDate,
     BudgetFilter,
     BudgetList,
     FormBalance,
@@ -48,11 +51,30 @@ export default {
 </script>
 
 <style>
+@font-face {
+    font-family: 'RubikDirt-Regular';
+    src: local('RubikDirt-Regular'),
+         url('~@/assets/fonts/RubikDirt-Regular.woff') format('woff'),
+         url('~@/assets/fonts/RubikDirt-Regular.woff2') format('woff2'),
+         url('~@/assets/fonts/RubikDirt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Quicksand-Regular';
+    src: local('Quicksand-Regular'),
+         url('~@/assets/fonts/Quicksand-Regular.woff') format('woff'),
+         url('~@/assets/fonts/Quicksand-Regular.woff2') format('woff2'),
+         url('~@/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   background-color: #f7f7f7;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Quicksand-Regular", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

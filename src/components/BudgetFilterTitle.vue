@@ -11,7 +11,7 @@
                 <span>Balance</span>
                 <h4>$ {{ total }}</h4>
             </div>
-            <img class="card-block-img" src="../assets/wallet.png" alt="">
+            <img class="card-block-img" src="../assets/images/wallet.png" alt="">
           </div>
         </ElCard>
       </ElCol>

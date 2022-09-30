@@ -13,7 +13,7 @@
                   <div class="card-block-info">
                       <h2>Add new item</h2>
                   </div>
-                  <img class="card-block-img" src="../assets/plus.png" alt="">
+                  <img class="card-block-img" src="../assets/images/plus.png" alt="">
               </div>
             </ElCard>
           </ElCol>

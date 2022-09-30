@@ -13,7 +13,7 @@
                   <span>{{ incomeBalance.title }}</span>
                   <h4>$ {{ income }}</h4>
               </div>
-              <img class="card-block-img" :src="require(`../assets/${incomeBalance.img}`)" alt="">
+              <img class="card-block-img" :src="require(`../assets/images/${incomeBalance.img}`)" alt="">
             </div>
           </ElCard>
           <ElCard 
@@ -27,7 +27,7 @@
                   <span>{{ outcomeBalance.title }}</span>
                   <h4>$ {{ outcome }}</h4>
               </div>
-              <img class="card-block-img" :src="require(`../assets/${outcomeBalance.img}`)" alt="">
+              <img class="card-block-img" :src="require(`../assets/images/${outcomeBalance.img}`)" alt="">
             </div>
           </ElCard>
         </div>

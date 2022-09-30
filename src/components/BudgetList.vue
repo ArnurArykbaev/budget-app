@@ -1,6 +1,9 @@
 <template>
   <div class="budget-list-wrap">
-    <ElCard class="card" :header="header">
+    <ElCard class="card">
+      <template #header>
+        <div class="card-header">{{ currentFilter }}</div>
+      </template>
       <template v-if="!isEmpty">
         <BudgetListItem
           v-for="(item, list) in userBudget"
@@ -28,16 +31,19 @@ export default {
     BudgetListItem,
   },
   data: () => ({
-    header: "Budget List",
+    header: "",
     emptyTitle: "Empty List",
   }),
   methods: {
   },
   computed: {
-    ...mapGetters("budgetList", ["userBudget"]),
+    ...mapGetters("budgetList", ["userBudget", "currentType"]),
     isEmpty() {
       return !Object.keys(this.userBudget).length;
     },
+    currentFilter() {
+      return this.currentType[0].toUpperCase() + this.currentType.slice(1).toLowerCase();
+    }
   },
 };
 </script>
@@ -50,5 +56,10 @@ export default {
 }
 .filter-row {
   margin-bottom: 20px;
+}
+.card-header {
+  font-family: "RubikDirt-Regular", "Arial", serif;
+  font-size: 16px !important;
+  color: #409EFF;
 }
 </style>
