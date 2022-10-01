@@ -72,4 +72,11 @@ export default {
 .el-form {
   margin-top: 20px;
 }
+.el-select-dropdown__item.selected {  
+  color: #049c6e !important;
+}
+.el-select-dropdown__item.selected,
+.el-select-dropdown__item {
+  font-family: "Quicksand-Regular", Arial, sans-serif;
+}
 </style>

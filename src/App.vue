@@ -83,6 +83,7 @@ html {
 :root {
   --el-fill-color-blank: #f7f7f7 !important;
   --el-bg-color-overlay: #f7f7f7 !important;
+  --el-color-primary: #049c6e !important;
 }
 
 </style>

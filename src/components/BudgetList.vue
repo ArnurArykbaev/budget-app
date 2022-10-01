@@ -60,6 +60,6 @@ export default {
 .card-header {
   font-family: "RubikDirt-Regular", "Arial", serif;
   font-size: 16px !important;
-  color: #409EFF;
+  color: #049c6e;
 }
 </style>

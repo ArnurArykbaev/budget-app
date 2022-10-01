@@ -27,7 +27,9 @@
                   <span>{{ outcomeBalance.title }}</span>
                   <h4>$ {{ outcome }}</h4>
               </div>
-              <img class="card-block-img" :src="require(`../assets/images/${outcomeBalance.img}`)" alt="">
+              <div>
+                <img class="card-block-img" :src="require(`../assets/images/${outcomeBalance.img}`)" alt="">
+              </div>
             </div>
           </ElCard>
         </div>

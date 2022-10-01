@@ -14,7 +14,7 @@
         </ElButton>
     </div>
 
-    <ElDialog v-model="confirmDialog" title="Warning" width="30%" center>
+    <ElDialog v-model="confirmDialog" width="300px" title="Warning" center>
         <span>Do you really want to delete this item?</span>
         <template #footer>
             <span class="dialog-footer" center>
@@ -97,5 +97,8 @@ export default {
 }
 .confirm-dialog {
     width: 60%;
+}
+.el-dialog {
+    min-width: 300px !important;
 }
 </style>

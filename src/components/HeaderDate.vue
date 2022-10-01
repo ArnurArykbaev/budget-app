@@ -100,7 +100,7 @@ export default{
     h5 {
         font-size: 23px;
         font-weight: normal;
-        color: #409EFF;
+        color: #049c6e;
     }
 
 </style>
